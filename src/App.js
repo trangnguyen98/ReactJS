@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
+// import logo from './logo.svg';
+import "antd/dist/antd.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Header from "./components/header/Header";
+import Search from "./components/search/search";
+import Content from "./components/content/content";
+import "./App.css";
+import Shop from "./components/shop/shop";
+import Magazine from "./components/manazine/manazine";
+import LayoutAdmin from "./components/layoutAdmin/LayoutAdmin";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="container">
+        <Header />
+        <Switch>
+          <Route path="/" exact>
+            <Search />
+            <Content />
+          </Route>
+          <Route path="/shop" exact component={Shop}></Route>
+          <Route path="/magazine" exact>
+            <Magazine />
+          </Route>
+          <Route>
+            <LayoutAdmin path="/admin"></LayoutAdmin>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

@@ -1,0 +1,14 @@
+/* li a{
+  border: 0px;
+} */
+.pagination {
+
+}
+
+.page-item {
+  padding-right: 15px;
+}
+
+.page-link {
+  border: none;
+}
