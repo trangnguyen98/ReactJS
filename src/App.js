@@ -8,13 +8,25 @@ import "./App.css";
 import Shop from "./components/shop/shop";
 import Magazine from "./components/manazine/manazine";
 import LayoutAdmin from "./components/layoutAdmin/LayoutAdmin";
+import AddProductForm from "./components/Admin/Product/AddProductForm";
+import ListProducts from "./components/Admin/Product/ListProducts";
 function App() {
   return (
     <Router>
       <div className="container">
-        <Header />
         <Switch>
+          <Route path="/admin/:path?">
+            <LayoutAdmin>
+              <Route exact path="/admin/product">
+                <ListProducts />
+              </Route>
+              <Route exact path="/admin/product/add">
+                <AddProductForm />
+              </Route>
+            </LayoutAdmin>
+          </Route>
           <Route path="/" exact>
+            <Header />
             <Search />
             <Content />
           </Route>

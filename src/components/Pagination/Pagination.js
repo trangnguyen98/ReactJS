@@ -1,8 +1,13 @@
 import React from "react";
-import "./footer.css";
-function Footer() {
+import "./Pagination.css";
+function Pagination(props) {
+  // const {pagination, onPageChange} = props
+  // const {page, limit, totalRows} = pagination
+  // const totalPages = Math.ceil(totalRows/limit)
+  // function handlePageChange() {
+  //   // onPageChange(newPage)
+  // }
   return (
-    // <div className="container">
     <div>
       <nav
         aria-label="Page navigation example"
@@ -10,21 +15,34 @@ function Footer() {
       >
         <ul class="pagination">
           <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span
+                aria-hidden="true"
+                // disabled={page <= 1}
+                // onClick={() => {
+                //   handlePageChange(page - 1);
+                // }}
+              >
+                &laquo;
+              </span>
+            </a>
+          </li>
+          <li class="page-item" onClick={() => props.onPageChange(1)}>
             <a class="page-link" href="#">
               1
             </a>
           </li>
-          <li class="page-item">
+          <li class="page-item" onClick={() => props.onPageChange(2)}>
             <a class="page-link" href="#">
               2
             </a>
           </li>
-          <li class="page-item">
+          <li class="page-item" onClick={() => props.onPageChange(3)}>
             <a class="page-link" href="#">
               3
             </a>
           </li>
-          <li class="page-item">
+          <li class="page-item" onClick={() => props.onPageChange(4)}>
             <a class="page-link" href="#">
               4
             </a>
@@ -61,7 +79,15 @@ function Footer() {
           </li>
           <li class="page-item">
             <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
+              <span
+                aria-hidden="true"
+                // disabled={page >= totalPages}
+                // onClick={() => {
+                //   handlePageChange(page + 1);
+                // }}
+              >
+                &raquo;
+              </span>
             </a>
           </li>
         </ul>
@@ -70,4 +96,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default Pagination;

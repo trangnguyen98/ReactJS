@@ -1,4 +1,4 @@
-import ListProducts from "./ListProducts";
+import ListProducts from "../Admin/Product/ListProducts";
 
 const LayoutAdmin = () => {
   return (
@@ -54,7 +54,10 @@ const LayoutAdmin = () => {
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">
+                    <a
+                      className="nav-link"
+                      href="../Admin/Product/ListProducts"
+                    >
                       <span data-feather="shopping-cart" />
                       Products
                     </a>
@@ -121,17 +124,17 @@ const LayoutAdmin = () => {
                 <h1 className="h2">Dashboard</h1>
                 <div className="btn-toolbar mb-2 mb-md-0">
                   <div className="btn-group me-2">
-                    <button
+                    {/* <button
                       type="button"
                       className="btn btn-sm btn-outline-secondary"
                     >
                       Share
-                    </button>
+                    </button> */}
                     <button
                       type="button"
                       className="btn btn-sm btn-outline-secondary"
                     >
-                      Export
+                      Add product
                     </button>
                   </div>
                   <button
