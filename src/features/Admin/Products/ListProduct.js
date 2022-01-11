@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, Route } from "react-router-dom";
+import { NavLink, Route } from "react-router-dom";
 
 const ListProduct = () => {
   const [listProduct, setListProduct] = useState([]);
@@ -28,7 +28,7 @@ const ListProduct = () => {
                 type="button"
                 className="btn btn-sm btn-outline-secondary"
               >
-                <Link to="admin/product/add">Add product</Link>
+                <NavLink to="/admin/product/add">Add product</NavLink>
               </button>
             </div>
             <button

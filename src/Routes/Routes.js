@@ -14,17 +14,14 @@ function Routes() {
       <div className="container">
         <Switch>
           <Route path="/admin/:path?">
-            {/* <Switch> */}
             <LayoutAdmin />
-            {/* <Route exact path={path}></Route> */}
-            <Route exact path="admin/product">
+
+            {/* <Route exact path="admin/product">
               <ListProduct />
             </Route>
             <Route exact path="admin/product/add">
               <AddProductForm />
-            </Route>
-            {/* </LayoutAdmin> */}
-            {/* </Switch> */}
+            </Route> */}
           </Route>
           <Route path="/" exact>
             <Header />

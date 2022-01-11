@@ -14,7 +14,7 @@ function AddProductForm() {
             type="text"
             class="form-control"
             id="inputAddress"
-            placeholder="1234 Main St"
+            placeholder="Name product"
           />
         </div>
         <div class="col-12">
@@ -25,12 +25,12 @@ function AddProductForm() {
             type="text"
             class="form-control"
             id="inputAddress2"
-            placeholder="Apartment, studio, or floor"
+            placeholder="Prie"
           />
         </div>
 
         <div class="col-12">
-          <label class="visually-hidden" for="inlineFormSelectPref">
+          <label for="inputAddress3" class="form-label">
             Preference
           </label>
           <select class="form-select" id="inlineFormSelectPref">

@@ -1,9 +1,8 @@
+// import { Link } from "react-router-dom";
 // import ListProduct from "../features/Admin/Products/ListProduct";
-import { Link } from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
+import RoutesAdmin from "../Routes/RoutesAdmin";
 const LayoutAdmin = () => {
-  // let {listProductId} = useParams()
-
   return (
     <div>
       <div>
@@ -57,15 +56,10 @@ const LayoutAdmin = () => {
                     </a>
                   </li>
                   <li className="nav-item">
-                    {/* <a
-                      className="nav-link"
-                      href="../features/Admin/Products/ListProduct"
-                    > */}
-
-                    <Link to="/admin/product" className="nav-link">
+                    <NavLink to="/admin/product" className="nav-link">
                       <span data-feather="shopping-cart" />
                       Products
-                    </Link>
+                    </NavLink>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="#">
@@ -79,7 +73,7 @@ const LayoutAdmin = () => {
                       Reports
                     </a>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <a className="nav-link" href="#">
                       <span data-feather="layers" />
                       Integrations
@@ -102,8 +96,8 @@ const LayoutAdmin = () => {
                       <span data-feather="file-text" />
                       Current month
                     </a>
-                  </li>
-                  <li className="nav-item">
+                  </li> */}
+                  {/* <li className="nav-item">
                     <a className="nav-link" href="#">
                       <span data-feather="file-text" />
                       Last quarter
@@ -120,13 +114,15 @@ const LayoutAdmin = () => {
                       <span data-feather="file-text" />
                       Year-end sale
                     </a>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </nav>
+            <div className="col-9">
+              <RoutesAdmin />
+            </div>
           </div>
         </div>
-        {/* <div></div> */}
       </div>
     </div>
   );
