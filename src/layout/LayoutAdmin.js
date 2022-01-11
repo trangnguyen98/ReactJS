@@ -1,6 +1,9 @@
-import ListProducts from "../Admin/Product/ListProducts";
+// import ListProduct from "../features/Admin/Products/ListProduct";
+import { Link } from "react-router-dom";
 
 const LayoutAdmin = () => {
+  // let {listProductId} = useParams()
+
   return (
     <div>
       <div>
@@ -54,13 +57,15 @@ const LayoutAdmin = () => {
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a
+                    {/* <a
                       className="nav-link"
-                      href="../Admin/Product/ListProducts"
-                    >
+                      href="../features/Admin/Products/ListProduct"
+                    > */}
+
+                    <Link to="/admin/product" className="nav-link">
                       <span data-feather="shopping-cart" />
                       Products
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="#">
@@ -119,40 +124,9 @@ const LayoutAdmin = () => {
                 </ul>
               </div>
             </nav>
-            <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-              <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 className="h2">Dashboard</h1>
-                <div className="btn-toolbar mb-2 mb-md-0">
-                  <div className="btn-group me-2">
-                    {/* <button
-                      type="button"
-                      className="btn btn-sm btn-outline-secondary"
-                    >
-                      Share
-                    </button> */}
-                    <button
-                      type="button"
-                      className="btn btn-sm btn-outline-secondary"
-                    >
-                      Add product
-                    </button>
-                  </div>
-                  <button
-                    type="button"
-                    className="btn btn-sm btn-outline-secondary dropdown-toggle"
-                  >
-                    <span data-feather="calendar" />
-                    This week
-                  </button>
-                </div>
-              </div>
-
-              <div className="table-responsive">
-                <ListProducts />
-              </div>
-            </main>
           </div>
         </div>
+        {/* <div></div> */}
       </div>
     </div>
   );

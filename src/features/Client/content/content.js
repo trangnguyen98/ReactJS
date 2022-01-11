@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./content.css";
 import axios from "axios";
-import Pagination from "../Pagination/Pagination";
+import Pagination from "../../../components/Pagination/Pagination";
 
 // const products = [
 //   {
@@ -223,6 +223,7 @@ function Content() {
             ))}
         </div>
       </div>
+      {/* <Pagination onPageChange={productOnePage} /> */}
       <Pagination onPageChange={productOnePage} />
     </div>
   );

@@ -5,7 +5,7 @@
       "name": "ghg",
       "catergory": "ban ghe",
       "price": 89,
-      "img": "./img/sp1.png",
+      "img": "../img/sp1.png",
       "rating": 0
     },
     {

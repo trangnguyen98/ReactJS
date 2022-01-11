@@ -1,7 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+
 function AddProductForm() {
-  const { register, handleSubmit, watch, errors } = useForm();
+  // const { register, handleSubmit, watch, errors } = useForm();
   return (
     <div>
       <form class="row g-3">
