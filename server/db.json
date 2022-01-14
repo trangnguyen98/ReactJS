@@ -103,6 +103,18 @@
       "price": 89,
       "img": "../img/sp1.png",
       "rating": 0
+    },
+    {
+      "name": "22",
+      "price": "22222",
+      "catergory": "",
+      "id": 14
+    },
+    {
+      "name": "33",
+      "price": "3333",
+      "catergory": "viennam",
+      "id": 15
     }
   ]
 }
