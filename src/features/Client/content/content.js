@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./content.css";
 import axios from "axios";
 import Pagination from "../../../components/Pagination/Pagination";
+import axiosClient from "../../../api/axiosClient";
+import productApi from "../../../api/productApi";
 
 // const products = [
 //   {
@@ -116,7 +118,7 @@ function Content() {
   //hàm callback
   // console.log("test");
   useEffect(() => {
-    axios.get(" http://localhost:8000/products").then((response) => {
+    productApi.getAll().then((response) => {
       // console.log(response.data);
       //setListProduct là promise (bất đồng bộ) nên chưa listProduct vẫn là mảng rỗng. sau đó sẽ chạy useEffect dưới
       setListProduct(response.data);

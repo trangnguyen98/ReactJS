@@ -1,28 +1,34 @@
-import axios from "axios";
+// import axios from "axios";
 import React from "react";
 // import { useForm } from "react-hook-form";
 import { useState } from "react";
+// import axiosClient from "../../../api/axiosClient";
+import productApi from "../../../api/productApi";
+import { useHistory } from "react-router-dom";
 function AddProductForm() {
   // const { register, handleSubmit, watch, errors } = useForm();
 
   const [nameProduct, setNameProduct] = useState("");
   const [categoryProduct, setCategoryProduct] = useState("");
   const [priceProduct, setPriceProduct] = useState("");
+  const history = useHistory();
 
   // const [submitted, setSubmitted] = useState(false)
 
   const handleSubmit = async () => {
     console.log(nameProduct);
+
     try {
-      console.log(+priceProduct);
-      const { response } = await axios.post("http://localhost:8000/products", {
+      // console.log(+priceProduct);
+      await productApi.addProduct({
         name: nameProduct,
-        price: priceProduct,
+        price: +priceProduct,
         catergory: categoryProduct,
       });
-      console.log(response);
+      history.push("/admin/product");
+      // console.log(response);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 

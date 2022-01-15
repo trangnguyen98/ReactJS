@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { NavLink, Route } from "react-router-dom";
-// import AddProductForm from "./AddProductForm";
-import axiosClient from "../../../api/axiosClient";
+// import axios from "axios";
+import { Link, NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
+// import axiosClient from "../../../api/axiosClient";
+import productApi from "../../../api/productApi";
 
 const ListProduct = () => {
   const [listProduct, setListProduct] = useState([]);
-  // const [currentproduct, setCurrentProduct] = useState(null)
-  // const [currentIndex, setCurrentIndex] = useState(-1)
 
   useEffect(() => {
-    axiosClient
-      .get("https://61e0f1e463f8fc0017618955.mockapi.io/api/products")
-      .then((response) => {
-        setListProduct(response.data);
-        console.log(response.data);
-      });
+    productApi.getAll().then((response) => {
+      setListProduct(response.data);
+    });
   }, []);
 
-  //   const setActiveProduct = (product, index) => {
-  //   setCurrentProduct(product);
-  //   setCurrentIndex(index);
-  // };
+  const history = useHistory();
+  const handleDelete = async (id) => {
+    try {
+      await productApi.deleteProduct(id);
+      history.go(0);
+    } catch (error) {}
+  };
 
   return (
     <div>
@@ -75,10 +75,13 @@ const ListProduct = () => {
                   <td>
                     <div class="d-grid gap-2 d-md-block">
                       <button type="button" class="btn btn-primary">
-                        Edit
+                        <Link to={`/admin/product/edit/${product.id}`}>
+                          Edit
+                        </Link>
                       </button>
 
                       <button
+                        onClick={() => handleDelete(product.id)}
                         style={{ marginRight: "5px" }}
                         type="button"
                         class="btn btn-danger"
@@ -87,8 +90,6 @@ const ListProduct = () => {
                       </button>
                     </div>
                   </td>
-                  {/* <td>
-                  </td> */}
                 </tr>
               </>
             ))}
