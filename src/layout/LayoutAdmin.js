@@ -63,8 +63,10 @@ const LayoutAdmin = () => {
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="#">
-                      <span data-feather="users" />
-                      Customers
+                      <NavLink to="/admin/catergory">
+                        <span data-feather="users" />
+                        Catergory
+                      </NavLink>
                     </a>
                   </li>
                   <li className="nav-item">

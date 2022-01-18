@@ -1,3 +1,70 @@
 {
-  "products": []
+  "products": [
+    {
+      "name": "iphone 6",
+      "price": 2500000000,
+      "catergory": "korea",
+      "id": 1,
+      "img": "../img/sp1.png"
+    },
+    {
+      "name": "iphone 6",
+      "price": 2500000000,
+      "catergory": "viet nam",
+      "id": 2,
+      "img": "../img/sp2.png"
+    },
+    {
+      "name": "iphone 6",
+      "price": 2500000000,
+      "catergory": "korea",
+      "id": 3,
+      "img": "../img/sp3.png"
+    },
+    {
+      "name": "iphone 6",
+      "price": 2500000000,
+      "catergory": "tokyo",
+      "id": 4,
+      "img": "../img/sp4.png"
+    },
+    {
+      "name": "iphone 6",
+      "price": 2500000000,
+      "catergory": "korea",
+      "id": 5,
+      "img": "../img/sp5.png"
+    },
+    {
+      "name": "iphone 6",
+      "price": 2500000000,
+      "catergory": "tokyo",
+      "id": 6,
+      "img": "../img/sp6.png"
+    },
+    {
+      "name": "iphone 6",
+      "price": 2500000000,
+      "catergory": "korea",
+      "id": 7,
+      "img": "../img/sp2.png"
+    },
+    {
+      "name": "iphone 6",
+      "price": 2500000000,
+      "catergory": "korea",
+      "id": 8,
+      "img": "../img/sp1.png"
+    }
+  ],
+  "catergories": [
+    {
+      "name": "China",
+      "id": 1
+    },
+    {
+      "name": "korean",
+      "id": 2
+    }
+  ]
 }

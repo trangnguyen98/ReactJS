@@ -1,9 +1,10 @@
 // import axios from "axios";
 import React from "react";
 // import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import axiosClient from "../../../api/axiosClient";
 import productApi from "../../../api/productApi";
+import catergoryApi from "../../../api/catergoryApi";
 import { useHistory } from "react-router-dom";
 function AddProductForm() {
   // const { register, handleSubmit, watch, errors } = useForm();
@@ -13,7 +14,11 @@ function AddProductForm() {
   const [priceProduct, setPriceProduct] = useState("");
   const history = useHistory();
 
-  // const [submitted, setSubmitted] = useState(false)
+  useEffect(() => {
+    catergoryApi.getAll().then((response) => {
+      setCategoryProduct(response.data);
+    });
+  }, []);
 
   const handleSubmit = async () => {
     console.log(nameProduct);
@@ -73,10 +78,13 @@ function AddProductForm() {
           value={categoryProduct}
           onChange={(e) => setCategoryProduct(e.target.value)}
         >
-          <option value="" select hidden></option>
-          <option value="tokyo">Tokyo</option>
-          <option value="korea">Korea</option>
-          <option value="viennam">Việt Nam</option>
+          {categoryProduct.length !== 0 &&
+            categoryProduct.map((categorie, index) => (
+              <option value={categorie.id} key={index}>
+                {categorie.name}
+              </option>
+              // <option value="" select hidden></option>
+            ))}
         </select>
       </div>
       <div class="col-12">

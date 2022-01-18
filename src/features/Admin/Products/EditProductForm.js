@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import productApi from "../../../api/productApi";
+import catergoryApi from "../../../api/catergoryApi";
 import { useHistory, useParams } from "react-router-dom";
 
 function EdditProductForm() {
@@ -8,13 +9,14 @@ function EdditProductForm() {
   const [categoryProduct, setCategoryProduct] = useState("");
   const [priceProduct, setPriceProduct] = useState("");
   const [imgProduct, setimgProduct] = useState("");
+  const [listCategoryProduct, setListCategoryProduct] = useState([]);
   const history = useHistory();
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
 
   const getDataByid = async () => {
     const { data } = await productApi.get(id);
-    console.log(data);
+    // console.log(data);
     if (data) {
       setNameProduct(data.name);
       setPriceProduct(data.price);
@@ -25,8 +27,11 @@ function EdditProductForm() {
   };
   useEffect(() => {
     getDataByid();
+    catergoryApi.getAll().then((response) => {
+      setListCategoryProduct(response.data);
+    });
   }, []);
-
+  console.log(categoryProduct);
   const handleSubmit = async () => {
     try {
       // console.log(+priceProduct);
@@ -86,10 +91,13 @@ function EdditProductForm() {
             value={categoryProduct}
             onChange={(e) => setCategoryProduct(e.target.value)}
           >
-            <option value="" select hidden></option>
-            <option value="tokyo">Tokyo</option>
-            <option value="korea">Korea</option>
-            <option value="viennam">Việt Nam</option>
+            {listCategoryProduct.length !== 0 &&
+              listCategoryProduct.map((categorie, index) => (
+                <option value={categorie.id} key={index}>
+                  {categorie.name}
+                </option>
+                // <option value="" select hidden></option>
+              ))}
           </select>
         </div>
         <div class="col-12">
